@@ -40,11 +40,12 @@
       })
       .then((profile) => {
         window.location.replace(
-          `https://esanphc.net?uid=${profile.userId}&dispname=${profile.displayName}&pic=${profile.pictureUrl}&status=${profile.statusMessage}`
+            `https://docs.google.com/forms/d/e/1FAIpQLSc0XiIAUApu-c7mW9gQGOOIYSlW0s5PG-ydazwLsMP7Obz-vw/viewform?usp=pp_url&entry.711596102=${profile.userId}&entry.544439674=${profile.displayName}&entry.1667964899=${profile.pictureUrl}&entry.999117163=${profile.statusMessage}`
         );
       });
 
       // `https://docs.google.com/forms/d/e/1FAIpQLSc0XiIAUApu-c7mW9gQGOOIYSlW0s5PG-ydazwLsMP7Obz-vw/viewform?usp=pp_url&entry.711596102=${profile.userId}&entry.544439674=${profile.displayName}&entry.1667964899=${profile.pictureUrl}&entry.999117163=${profile.statusMessage}`
+      //`https://esanphc.net?uid=${profile.userId}&dispname=${profile.displayName}&pic=${profile.pictureUrl}&status=${profile.statusMessage}`
 
     liff.init(
       {
