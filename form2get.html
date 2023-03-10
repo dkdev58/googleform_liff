@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<h1>A22 GET</h1>
+<h1>A23 GET</h1>
 
 
 <p id="os"><b>OS:</b> </p>
@@ -49,6 +49,9 @@
 
   <p id="userid5"><b>userid5:</b> </p>
   <p id="userid6"><b>userid6:</b> </p>
+  <p>
+    Display Name : <input id="dispname" type="text" value="">
+  </p>
   <input type="submit" value="Send">
 
 </form>
@@ -184,6 +187,8 @@
 
       document.getElementById("userid5").innerHTML="userid_form :<input name='userid' type='text' value='"+(profile.userId)+"'>"
       document.getElementById("userid6").innerHTML="userid_form hidden : <input name='userid_hidden' type='hidden' value='"+(profile.userId)+"'>"
+
+      document.getElementById("dispname").value=(profile.displayName)
       //.ทดสอบส่งค่า
     }
 
