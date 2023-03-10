@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<h1>A23 GET</h1>
+<h1>A24 GET</h1>
 
 
 <p id="os"><b>OS:</b> </p>
@@ -47,11 +47,19 @@
 <h1>FORM</h1>
 <form action="http://www.caffeinez.com/liff/form2/form2addget.php" method="get">
 
-  <p id="userid5"><b>userid5:</b> </p>
-  <p id="userid6"><b>userid6:</b> </p>
+  <p>
+    User ID : <input id="userid" type="text" value="">
+  </p>
   <p>
     Display Name : <input id="dispname" type="text" value="">
   </p>
+  <p>
+    Picture : <input id="picture" type="text" value="">
+  </p>
+  <p>
+    Email : <input id="email" type="text" value="">
+  </p>
+
   <input type="submit" value="Send">
 
 </form>
@@ -185,10 +193,12 @@
       //document.getElementById("userid1").innerHTML="<h2>"+(userid1)+"</h2>"
       document.getElementById("userid1").innerHTML="<h6>userid :"+(profile.userId)+"</h6>"
 
-      document.getElementById("userid5").innerHTML="userid_form :<input name='userid' type='text' value='"+(profile.userId)+"'>"
-      document.getElementById("userid6").innerHTML="userid_form hidden : <input name='userid_hidden' type='hidden' value='"+(profile.userId)+"'>"
 
+      // ส่งค่าไปที่ form
+      document.getElementById("userid").value=(profile.userId)
       document.getElementById("dispname").value=(profile.displayName)
+      document.getElementById("picture").value=(profile.pictureUrl)
+      document.getElementById("email").value=(liff.getDecodedIDToken().email)
       //.ทดสอบส่งค่า
     }
 
