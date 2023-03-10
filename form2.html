@@ -9,7 +9,7 @@
 <body>
     <center>
         <h1>
-          กำลังเข้าสู่ form2.html A5
+          กำลังเข้าสู่ form2.html A6
         </h1>
     </center>
 
@@ -32,18 +32,18 @@
 <script>
 
   /// Config Your LIFF ID Here
-  const liffId = "1660723525-xzjPPW7r";
-    /// Config Your LIFF ID Here
-    liff.ready
-      .then(() => {
-        if (liff.isLoggedIn()) {
-          return liff.getProfile();
-        } else {
-          liff.login({
-            redirectUri: "https://dkdev58.github.io/googleform_liff/",
-          });
-        }
-      })
+  // const liffId = "1660723525-xzjPPW7r";
+  //   /// Config Your LIFF ID Here
+  //   liff.ready
+  //     .then(() => {
+  //       if (liff.isLoggedIn()) {
+  //         return liff.getProfile();
+  //       } else {
+  //         liff.login({
+  //           redirectUri: "https://dkdev58.github.io/googleform_liff/",
+  //         });
+  //       }
+  //     })
       // .then((profile) => {
       //   document.getElementById("pictureUrl").src = profile.pictureUrl
       //   document.getElementById("userId").append(profile.userId)
@@ -79,7 +79,30 @@
       document.getElementById("userid3").innerHTML="userid_form hidden <input name='userid_form' type='hidden' value='"+(profile.userId)+"'>"
       //.ทดสอบส่งค่า
     };
+    async function main() {
+      // alert("LINE Developers x Skooldio")
+      
+      await liff.init({ liffId: "1660718056-3l4OOLK7" })
+      // await liff.init({ liffId: "YOUR-LIFF-ID" })
+      document.getElementById("isLoggedIn").append(liff.isLoggedIn())
+      if (liff.isLoggedIn()) {
+        getEnvironment()
+        getUserProfile()
+        getContext()
+        getFriendship()
+      } else {
+       // liff.login()
+      }
 
+      createUniversalLink()
+
+      //getEnvironment()
+      //getUserProfile()
+      //getContext()
+      //getFriendship()
+      // createUniversalLink()
+    }
+    main()
 </script>
 
   <!-- VConsole -->
