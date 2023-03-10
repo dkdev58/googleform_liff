@@ -41,9 +41,24 @@
   <button id="btnLogOut" onclick="logOut()">Log Out</button>
   <button id="btnClose" onclick="closed()">Close</button>
 
+<!-- FORM -->
+
+<form action="">
+  <h1>FORM</h1>
+  <p id="userid1"><b>userid4:</b> </p>
+  <p id="userid2"><b>userid5:</b> </p>
+  <p id="userid3"><b>userid6:</b> </p>
+  <script>
+    document.getElementById("userid4").innerHTML="<h6>userid :"+(profile.userId)+"</h6>"
+    document.getElementById("userid5").innerHTML="userid_form :<input name='userid_form' type='text' value='"+(profile.userId)+"'>"
+    document.getElementById("userid6").innerHTML="userid_form hidden : <input name='userid_form' type='hidden' value='"+(profile.userId)+"'>"
+  </script>
+
+
+</form>
 
 <!-- เพิ่มเติม 1 -->
-
+<h1>เพิ่มเติม</h1>
   <p id="userid1"><b>userid1:</b> </p>
   <p id="userid2"><b>userid2:</b> </p>
   <p id="userid3"><b>userid3:</b> </p>
@@ -170,9 +185,9 @@
       //const userid1 = (profile.userId)
       //console.log(userid1)
       //document.getElementById("userid1").innerHTML="<h2>"+(userid1)+"</h2>"
-      document.getElementById("userid1").innerHTML="<h6>userid"+(profile.userId)+"</h6>"
-      document.getElementById("userid2").innerHTML="userid_form<input name='userid_form' type='text' value='"+(profile.userId)+"'>"
-      document.getElementById("userid3").innerHTML="userid_form hidden <input name='userid_form' type='hidden' value='"+(profile.userId)+"'>"
+      document.getElementById("userid1").innerHTML="<h6>userid :"+(profile.userId)+"</h6>"
+      document.getElementById("userid2").innerHTML="userid_form :<input name='userid_form' type='text' value='"+(profile.userId)+"'>"
+      document.getElementById("userid3").innerHTML="userid_form hidden : <input name='userid_form' type='hidden' value='"+(profile.userId)+"'>"
       //.ทดสอบส่งค่า
     }
 
@@ -247,7 +262,6 @@
     // Avoid Liff caching for debuging
     document.write('<link rel="stylesheet" href="css/style.css?cache=' + new Date().getTime() + '" media="all">')
   </script>
-
 
 
 </body>
