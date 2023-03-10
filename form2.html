@@ -13,42 +13,88 @@
         </h1>
     </center>
 
-
-
     <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
     <script>
       /// Config Your LIFF ID Here
       const liffId = "1660723525-xzjPPW7r";
       /// Config Your LIFF ID Here
-      liff.ready
-        .then(() => {
-          if (liff.isLoggedIn()) {
-            return liff.getProfile();
-          } else {
-            liff.login({
-              redirectUri: "https://dkdev58.github.io/googleform_liff/",
-            });
-          }
-        })
-        .then((profile) => {
-          window.location.replace(
-              `https://docs.google.com/forms/d/e/1FAIpQLSc0XiIAUApu-c7mW9gQGOOIYSlW0s5PG-ydazwLsMP7Obz-vw/viewform?usp=pp_url&entry.711596102=${profile.userId}&entry.544439674=${profile.displayName}&entry.1667964899=${profile.pictureUrl}&entry.999117163=${profile.statusMessage}`
-          );
-        });
+      // liff.ready
+      //   .then(() => {
+      //     if (liff.isLoggedIn()) {
+      //       return liff.getProfile();
+      //     } else {
+      //       liff.login({
+      //         redirectUri: "https://dkdev58.github.io/googleform_liff/",
+      //       });
+      //     }
+      //   })
+      //   .then((profile) => {
+      //     window.location.replace(
+      //         `https://docs.google.com/forms/d/e/1FAIpQLSc0XiIAUApu-c7mW9gQGOOIYSlW0s5PG-ydazwLsMP7Obz-vw/viewform?usp=pp_url&entry.711596102=${profile.userId}&entry.544439674=${profile.displayName}&entry.1667964899=${profile.pictureUrl}&entry.999117163=${profile.statusMessage}`
+      //     );
+      //   });
   
-        // `https://docs.google.com/forms/d/e/1FAIpQLSc0XiIAUApu-c7mW9gQGOOIYSlW0s5PG-ydazwLsMP7Obz-vw/viewform?usp=pp_url&entry.711596102=${profile.userId}&entry.544439674=${profile.displayName}&entry.1667964899=${profile.pictureUrl}&entry.999117163=${profile.statusMessage}`
+      //   // `https://docs.google.com/forms/d/e/1FAIpQLSc0XiIAUApu-c7mW9gQGOOIYSlW0s5PG-ydazwLsMP7Obz-vw/viewform?usp=pp_url&entry.711596102=${profile.userId}&entry.544439674=${profile.displayName}&entry.1667964899=${profile.pictureUrl}&entry.999117163=${profile.statusMessage}`
   
-        //`https://esanphc.net?uid=${profile.userId}&dispname=${profile.displayName}&pic=${profile.pictureUrl}&status=${profile.statusMessage}`
+      //   //`https://esanphc.net?uid=${profile.userId}&dispname=${profile.displayName}&pic=${profile.pictureUrl}&status=${profile.statusMessage}`
   
-      liff.init(
-        {
-          liffId: liffId,
-        },
-        () => {},
-        (err) => {
-          window.alert(err);
-        }
-      );
+      // liff.init(
+      //   {
+      //     liffId: liffId,
+      //   },
+      //   () => {},
+      //   (err) => {
+      //     window.alert(err);
+      //   }
+      // );
     </script>
 </body>
 </html>
+
+<script>
+  async function getUserProfile() {
+  const profile = await liff.getProfile()
+  document.getElementById("pictureUrl").src = profile.pictureUrl
+  document.getElementById("userId").append(profile.userId)
+  document.getElementById("statusMessage").append(profile.statusMessage)
+  document.getElementById("displayName").append(profile.displayName)
+  document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
+
+  //ทดสอบส่งค่า
+  console.log(profile.userId)
+  console.log(profile.pictureUrl)
+  //const userid1 = (profile.userId)
+  //console.log(userid1)
+  //document.getElementById("userid1").innerHTML="<h2>"+(userid1)+"</h2>"
+  document.getElementById("userid1").innerHTML="<h6>userid"+(profile.userId)+"</h6>"
+  document.getElementById("userid2").innerHTML="userid_form<input name='userid_form' type='text' value='"+(profile.userId)+"'>"
+  document.getElementById("userid3").innerHTML="userid_form hidden <input name='userid_form' type='hidden' value='"+(profile.userId)+"'>"
+  //.ทดสอบส่งค่า
+}
+
+async function main() {
+      // alert("LINE Developers x Skooldio")
+      
+      await liff.init({ liffId: "1660718056-3l4OOLK7" })
+      // await liff.init({ liffId: "YOUR-LIFF-ID" })
+      document.getElementById("isLoggedIn").append(liff.isLoggedIn())
+      if (liff.isLoggedIn()) {
+        getEnvironment()
+        getUserProfile()
+        getContext()
+        getFriendship()
+      } else {
+       // liff.login()
+      }
+
+      createUniversalLink()
+
+      //getEnvironment()
+      //getUserProfile()
+      //getContext()
+      //getFriendship()
+      // createUniversalLink()
+    }
+    main()
+
+</script>
