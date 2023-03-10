@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<h1>A21</h1>
+<h1>A25 GET</h1>
 
 
 <p id="os"><b>OS:</b> </p>
@@ -47,8 +47,32 @@
 <h1>FORM</h1>
 <form action="http://www.caffeinez.com/liff/form2/form2add.php" method="post">
 
-  <p id="userid5"><b>userid5:</b> </p>
-  <p id="userid6"><b>userid6:</b> </p>
+  <p>
+    User ID : <input id="userid" type="text" value="">
+  </p>
+  <p>
+    Display Name : <input id="dispname" type="text" value="">
+  </p>
+  <p>
+    Picture : <input id="picture" type="text" value="">
+  </p>
+  <p>
+    Status : <input id="status" type="text" value="">
+  </p>
+
+
+  <!-- Hidden Start -->
+
+    U: <input id="userid_h" type="hidden" value="">
+
+    D: <input id="dispname_h" type="hidden" value="">
+
+    P: <input id="picture_h" type="hidden" value="">
+
+    S: <input id="status_h" type="hidden" value="">
+
+  <!-- Hidden End -->
+
   <input type="submit" value="Send">
 
 </form>
@@ -182,8 +206,19 @@
       //document.getElementById("userid1").innerHTML="<h2>"+(userid1)+"</h2>"
       document.getElementById("userid1").innerHTML="<h6>userid :"+(profile.userId)+"</h6>"
 
-      document.getElementById("userid5").innerHTML="userid_form :<input name='userid' type='text' value='"+(profile.userId)+"'>"
-      document.getElementById("userid6").innerHTML="userid_form hidden : <input name='userid_hidden' type='hidden' value='"+(profile.userId)+"'>"
+
+      // ส่งค่าไปที่ form
+      document.getElementById("userid").value=(profile.userId)
+      document.getElementById("dispname").value=(profile.displayName)
+      document.getElementById("picture").value=(profile.pictureUrl)
+      document.getElementById("status").value=(profile.statusMessage)
+
+      // ส่งค่าไปที่ hidden form
+      document.getElementById("userid_h").value=(profile.userId)
+      document.getElementById("dispname_h").value=(profile.displayName)
+      document.getElementById("picture_h").value=(profile.pictureUrl)
+      document.getElementById("status_h").value=(profile.statusMessage)
+
       //.ทดสอบส่งค่า
     }
 

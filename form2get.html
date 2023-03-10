@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<h1>A24 GET</h1>
+<h1>A25 GET</h1>
 
 
 <p id="os"><b>OS:</b> </p>
@@ -57,7 +57,7 @@
     Picture : <input id="picture" type="text" value="">
   </p>
   <p>
-    Email : <input id="email" type="text" value="">
+    Status : <input id="status" type="text" value="">
   </p>
 
   <input type="submit" value="Send">
@@ -198,7 +198,7 @@
       document.getElementById("userid").value=(profile.userId)
       document.getElementById("dispname").value=(profile.displayName)
       document.getElementById("picture").value=(profile.pictureUrl)
-      document.getElementById("email").value=(liff.getDecodedIDToken().email)
+      document.getElementById("status").value=(profile.statusMessage)
       //.ทดสอบส่งค่า
     }
 
