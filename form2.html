@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<h1>A20</h1>
+<h1>A21</h1>
 
 
 <p id="os"><b>OS:</b> </p>
@@ -45,22 +45,18 @@
 
 <!-- FORM -->
 <h1>FORM</h1>
-<form action="">
+<form action="http://www.caffeinez.com/liff/form2/form2add.php" method="post">
 
   <p id="userid5"><b>userid5:</b> </p>
   <p id="userid6"><b>userid6:</b> </p>
-  <script>
-
-  </script>  
-
+  <input type="submit" value="Send">
 
 </form>
 
 <!-- เพิ่มเติม 1 -->
 <h1>เพิ่มเติม</h1>
   <p id="userid1"><b>userid1:</b> </p>
-  <p id="userid2"><b>userid2:</b> </p>
-  <p id="userid3"><b>userid3:</b> </p>
+
 
   <a href="" onclick="external1()">google (external browser)</a><br>
 
@@ -185,10 +181,9 @@
       //console.log(userid1)
       //document.getElementById("userid1").innerHTML="<h2>"+(userid1)+"</h2>"
       document.getElementById("userid1").innerHTML="<h6>userid :"+(profile.userId)+"</h6>"
-      document.getElementById("userid2").innerHTML="userid_form :<input name='userid_form' type='text' value='"+(profile.userId)+"'>"
-      document.getElementById("userid3").innerHTML="userid_form hidden : <input name='userid_form' type='hidden' value='"+(profile.userId)+"'>"
-      document.getElementById("userid5").innerHTML="userid_form :<input name='userid_form' type='text' value='"+(profile.userId)+"'>"
-      document.getElementById("userid6").innerHTML="userid_form hidden : <input name='userid_form' type='hidden' value='"+(profile.userId)+"'>"
+
+      document.getElementById("userid5").innerHTML="userid_form :<input name='userid' type='text' value='"+(profile.userId)+"'>"
+      document.getElementById("userid6").innerHTML="userid_form hidden : <input name='userid_hidden' type='hidden' value='"+(profile.userId)+"'>"
       //.ทดสอบส่งค่า
     }
 
