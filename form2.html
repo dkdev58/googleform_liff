@@ -17,8 +17,8 @@
 
 
 <script>
-  async function getUserProfile() {
-  const profile = await liff.getProfile()
+  function getUserProfile() {
+  const profile =  liff.getProfile()
   document.getElementById("pictureUrl").src = profile.pictureUrl
   document.getElementById("userId").append(profile.userId)
   document.getElementById("statusMessage").append(profile.statusMessage)
@@ -37,22 +37,22 @@
   //.ทดสอบส่งค่า
 }
 
-async function main() {
+function main() {
       // alert("LINE Developers x Skooldio")
       
-      await liff.init({ liffId: "1660718056-3l4OOLK7" })
+      liff.init({ liffId: "1660718056-3l4OOLK7" })
       // await liff.init({ liffId: "YOUR-LIFF-ID" })
       document.getElementById("isLoggedIn").append(liff.isLoggedIn())
       if (liff.isLoggedIn()) {
-        getEnvironment()
+        // getEnvironment()
         getUserProfile()
-        getContext()
-        getFriendship()
+        // getContext()
+        // getFriendship()
       } else {
        // liff.login()
       }
 
-      createUniversalLink()
+      // createUniversalLink()
 
       //getEnvironment()
       //getUserProfile()
